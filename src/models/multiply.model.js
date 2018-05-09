@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+ 
 const MultiplySchema = mongoose.Schema({
     firstArg: Number,
     secondArg: Number,
