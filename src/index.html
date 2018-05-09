@@ -1,0 +1,29 @@
+<html ng-app="angularApp">
+    <head>
+        <title>
+            Angular App - Multiply two numbers
+        </title>
+        <link rel="stylesheet" href="./css/site.css">
+    </head>
+    <body ng-controller="AppCtrl as vm">
+        <div class="main-container">
+            <h1 class="text-center">Multiplication App</h1>
+            <div class="result-area">
+                <div><p ng-bind="vm.historyObj.firstArg"></p></div>
+                <div>*</div>
+                <div><p ng-bind="vm.historyObj.secondArg"></p></div>
+                <div> = </p></div>
+                <div>
+                    <result-directive first-arg="{{vm.historyObj.firstArg}}" second-arg="{{vm.historyObj.secondArg}}"></result-directive>
+                </div>
+            </div>
+            <form ng-submit="vm.setData()">
+                <input ng-class="{'error':vm.obj.firstArg < 0}" type="number" ng-model="vm.obj.firstArg" />
+                <input ng-class="{'error':vm.obj.secondArg < 0}" type="number" ng-model="vm.obj.secondArg"/>
+                <button ng-disabled="vm.obj.firstArg == undefined || vm.obj.firstArg < 0 || vm.obj.secondArg == undefined || vm.obj.secondArg < 0"> Multiply </button>
+            </form>
+        </div>
+        <script src="js/angular.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
